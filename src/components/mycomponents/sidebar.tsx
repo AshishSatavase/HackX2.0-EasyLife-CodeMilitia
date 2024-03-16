@@ -3,31 +3,35 @@
  * @see https://v0.dev/t/znNKwmixxlo
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-export default function Component() {
+export default function SideBar() {
     return (
-      <div className="flex h-screen bg-gray-100">
+      <div className="flex h-full bg-gray-100 p-0 m-0 ">
         <aside className="w-64 bg-blue-100 p-5">
           <div className="flex items-center space-x-2">
             <FlagIcon className="h-8 w-8 text-blue-600" />
-            <span className="font-bold text-blue-600">CodingNepal</span>
+            <span className="font-bold text-blue-600">EasyLife</span>
           </div>
           <div className="mt-5">
+          <button onClick={()=>{window.location.pathname = '/';}} className="w-full">
             <div className="flex items-center justify-between bg-blue-500 text-white px-4 py-2 rounded-md">
+            
               <div className="flex items-center space-x-2">
                 <HomeIcon className="h-5 w-5" />
-                <span>Home</span>
+               <span>Home</span>
               </div>
               <ChevronRightIcon className="h-4 w-4" />
             </div>
+            </button>
             <div className="mt-2">
+            <button onClick={()=>{window.location.pathname = '/channelform';}} className="w-full">
+
               <div className="flex items-center justify-between px-4 py-2 rounded-md text-gray-700 hover:bg-blue-200">
                 <div className="flex items-center space-x-2">
                   <LayoutGridIcon className="h-5 w-5" />
-                  <span>Overview</span>
+                  <span>Self Declaration</span>
                 </div>
-                <ChevronRightIcon className="h-4 w-4" />
               </div>
-              <p className="mt-4 font-bold text-gray-700">Editor</p>
+              </button>
               <div className="mt-2 space-y-2">
                 <div className="flex items-center px-4 py-2 rounded-md text-gray-700 hover:bg-blue-200">
                   <WandIcon className="h-5 w-5" />
@@ -46,7 +50,6 @@ export default function Component() {
                   <span className="ml-2">Upload new</span>
                 </div>
               </div>
-              <p className="mt-4 font-bold text-gray-700">Setting</p>
               <div className="mt-2 space-y-2">
                 <div className="flex items-center px-4 py-2 rounded-md text-gray-700 hover:bg-blue-200">
                   <CogIcon className="h-5 w-5" />

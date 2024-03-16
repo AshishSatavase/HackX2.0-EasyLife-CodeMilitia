@@ -5,40 +5,44 @@
  */
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
-export default function Component() {
+export default function Form() {
+  const [name,setName]=useState('');
+
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="w-100 mx-auto p-6 bg-white rounded-lg shadow-md border-b">
       <form>
         <fieldset>
           <legend className="text-lg font-semibold mb-4">Personal Information</legend>
           <div className="flex flex-col space-y-4 mb-6">
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="fullName">
-                Full Name
+            <div className="flex flex-row space-y-1 items-center">
+              <label className="text-sm ml-5 font-medium text-left w-40 " htmlFor="fullName">
+                Full Name:
               </label>
-              <Input id="fullName" placeholder="John Doe" />
+              <Input id="fullName" placeholder="John Doe" onChange={(e)=>{setName(e.target.value);
+              console.log(name)}} />
             </div>
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="email">
+            <div className="flex flex-row items-center  space-y-1">
+              <label className="text-sm font-medium w-40" htmlFor="email">
                 Email Address
               </label>
-              <Input id="email" placeholder="john.doe@example.com" type="email" />
+              <Input id="email" placeholder="john.doe@example.com" type="email"  />
             </div>
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="phoneNumber">
+            <div className="flex flex-row space-y-1 items-center">
+              <label className="text-sm font-medium w-40" htmlFor="phoneNumber">
                 Phone Number
               </label>
               <Input id="phoneNumber" placeholder="(555) 123-4567" />
             </div>
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="dateOfBirth">
+            <div className="flex flex-row space-y-1 items-center space-x-3">
+              <label className="text-sm font-medium pl-5 pr-3" htmlFor="dateOfBirth" >
                 Date of Birth
               </label>
-              <Input id="dateOfBirth" type="date" />
+              <Input id="dateOfBirth" type="date" className="w-40" />
             </div>
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="address">
+            <div className="flex flex-row items-center space-y-1">
+              <label className="text-sm font-medium w-40" htmlFor="address">
                 Address
               </label>
               <Input id="address" placeholder="1234 Main St, Anytown, USA" />
@@ -46,14 +50,15 @@ export default function Component() {
           </div>
         </fieldset>
         <fieldset>
-          <legend className="text-lg font-semibold mb-4">Medical History</legend>
+          <legend className="text-lg font-semibold mb-4 space-y-4 mb-10">Medical History</legend>
           <div className="flex flex-col space-y-4 mb-6">
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="medicalConditions">
+              <label className="text-sm text-left font-medium mb-3" htmlFor="medicalConditions">
                 Do you currently have any medical conditions or illnesses?
               </label>
-              <div className="flex items-center space-x-4">
-                <input className="form-radio" id="medicalConditionsYes" name="medicalConditions" type="radio" />
+              <div className="flex flex-col">
+              <div className="flex items-center space-x-4 ">
+                <input className="form-radio " id="medicalConditionsYes" name="medicalConditions" type="radio" />
                 <label className="text-sm font-medium" htmlFor="medicalConditionsYes">
                   Yes
                 </label>
@@ -61,15 +66,20 @@ export default function Component() {
                 <label className="text-sm font-medium" htmlFor="medicalConditionsNo">
                   No
                 </label>
+                <div className="w-full">
                 <textarea
                   className="w-full p-2 border rounded-md"
                   id="medicalConditionsDetails"
                   placeholder="List any medical conditions or illnesses here"
                 />
+                </div>
+                
               </div>
+              </div>
+              
             </div>
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="surgeries">
+            <div className="flex flex-col space-y-2">
+              <label className="text-sm font-medium text-left mb-3" htmlFor="surgeries">
                 Have you had any surgeries or hospitalizations in the past [timeframe]?
               </label>
               <div className="flex items-center space-x-4">
@@ -89,7 +99,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="medications">
+              <label className="text-sm font-medium text-left mb-3" htmlFor="medications">
                 Are you currently taking any prescription medications? If yes, please list them.
               </label>
               <div className="flex items-center space-x-4">
@@ -109,7 +119,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="chronicConditions">
+              <label className="text-sm font-medium text-left mb-3" htmlFor="chronicConditions">
                 Have you ever been diagnosed with or treated for any chronic conditions?
               </label>
               <div className="flex items-center space-x-4">
@@ -124,7 +134,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="familyConditions">
+              <label className="text-sm font-medium text-left mb-3" htmlFor="familyConditions">
                 Have any of your immediate family members been diagnosed with serious medical conditions?
               </label>
               <div className="flex items-center space-x-4">
@@ -142,12 +152,12 @@ export default function Component() {
         </fieldset>
         <fieldset>
           <legend className="text-lg font-semibold mb-4">Lifestyle and Habits</legend>
-          <div className="flex flex-col space-y-4 mb-6">
-            <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="tobaccoUse">
+          <div className="flex flex-col space-y-4  mb-6">
+            <div className="flex flex-row items-center  space-y-1 justify-between mb-5">
+              <label className="text-sm font-medium " htmlFor="tobaccoUse">
                 Do you smoke cigarettes or use any other tobacco products? If yes, how often?
               </label>
-              <div className="flex items-center space-x-4">
+              <div className="flex self-center  space-x-4">
                 <select className="form-select" id="tobaccoUse">
                   <option value="never">Never</option>
                   <option value="rarely">Rarely</option>
@@ -156,7 +166,7 @@ export default function Component() {
                 </select>
               </div>
             </div>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-row justify-between space-y-1 mb-7">
               <label className="text-sm font-medium" htmlFor="alcoholConsumption">
                 How often do you consume alcoholic beverages?
               </label>
@@ -169,7 +179,7 @@ export default function Component() {
                 </select>
               </div>
             </div>
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-row space-y-1 justify-between">
               <label className="text-sm font-medium" htmlFor="highRiskActivities">
                 Do you engage in any high-risk activities or sports that could result in injury?
               </label>
@@ -185,19 +195,19 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="occupation">
+              <label className="text-sm font-medium text-left " htmlFor="occupation">
                 What is your occupation, and are you exposed to any occupational hazards or risks?
               </label>
-              <Input id="occupation" placeholder="Your Occupation" />
+              <Input id="occupation" className="h-20" placeholder="Your Occupation" />
             </div>
           </div>
         </fieldset>
         <fieldset>
-          <legend className="text-lg font-semibold mb-4">Travel and Insurance Details</legend>
+          <legend className="text-lg font-semibold mb-4 " >Travel and Insurance Details</legend>
           <div className="flex flex-col space-y-4 mb-6">
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="internationalTravel">
-                Have you traveled internationally in the past [timeframe]? If yes, please list the countries visited.
+              <label className="text-sm font-medium text-left" htmlFor="internationalTravel">
+                Have you traveled internationally in the past? If yes, please list the countries visited.
               </label>
               <div className="flex items-center space-x-4">
                 <input className="form-radio" id="internationalTravelYes" name="internationalTravel" type="radio" />
@@ -216,7 +226,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="pregnancy">
+              <label className="text-sm font-medium text-left mb-4" htmlFor="pregnancy">
                 Are you currently pregnant or planning to become pregnant during the policy period?
               </label>
               <div className="flex items-center space-x-4">
@@ -231,7 +241,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="medicalInsurance">
+              <label className="text-sm font-medium text-left mb-4" htmlFor="medicalInsurance">
                 Do you currently have any other medical insurance coverage?
               </label>
               <div className="flex items-center space-x-4">
@@ -246,7 +256,7 @@ export default function Component() {
               </div>
             </div>
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="insurancePreferences">
+              <label className="text-sm font-medium text-left mb-4" htmlFor="insurancePreferences">
                 What coverage preferences do you have for your medical insurance policy?
               </label>
               <Input id="insurancePreferences" placeholder="Your Coverage Preferences" />
@@ -257,11 +267,11 @@ export default function Component() {
           <legend className="text-lg font-semibold mb-4">Additional Information</legend>
           <div className="flex flex-col space-y-4 mb-6">
             <div className="flex flex-col space-y-1">
-              <label className="text-sm font-medium" htmlFor="healthFactors">
+              <label className="text-sm font-medium text-left mb-4" htmlFor="healthFactors">
                 Are there any other health-related factors or concerns you would like to disclose?
               </label>
               <textarea
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border rounded-md text-left mb-4"
                 id="healthFactorsDetails"
                 placeholder="Enter health-related factors or concerns"
               />
@@ -271,7 +281,7 @@ export default function Component() {
                 Is there anything else you would like to add or clarify about your medical history or lifestyle habits?
               </label>
               <textarea
-                className="w-full p-2 border rounded-md"
+                className="w-full p-2 border rounded-md "
                 id="additionalCommentsDetails"
                 placeholder="Add any additional comments or clarifications"
               />
