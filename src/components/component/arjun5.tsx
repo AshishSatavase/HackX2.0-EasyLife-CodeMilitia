@@ -4,7 +4,7 @@
  */
 import { Button } from "@/components/ui/button"
 
-export function Component() {
+export function arjun5() {
   return (
     <div className="bg-white">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between px-4 py-8 md:py-16 max-w-7xl mx-auto">

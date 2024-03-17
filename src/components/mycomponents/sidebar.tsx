@@ -62,7 +62,7 @@ export default function SideBar() {
                   </div>
                 </div>
               </button>
-              <button onClick={() => { window.location.pathname = '/easyai'; }} className="w-full">
+              <button onClick={() => { window.location.pathname = '/logout'; }} className="w-full">
                 <div className="flex items-center justify-between px-4 py-2 rounded-md text-gray-700 hover:bg-blue-200">
                   <div className="flex items-center space-x-2">
                     <LogOut className="h-5 w-5" />

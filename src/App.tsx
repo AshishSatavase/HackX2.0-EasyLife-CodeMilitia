@@ -11,6 +11,7 @@ import { ChannelAppointment } from './components/mycomponents/channel-appointmen
 import { EasyAI } from './components/mycomponents/easy-ai';
 import { ContactUsPage } from './components/mycomponents/contactusPage';
 import { Recommendation } from './components/mycomponents/RecomPage';
+import { LandingPage } from './components/mycomponents/LandingPage';
 
 const App = () => {
   const { userId } = useAuth();
@@ -33,11 +34,10 @@ const App = () => {
           <Route path='/easyai' element={<EasyAI/>} />
           <Route path='/contactus' element={<ContactUsPage/>} />
           <Route path='/recommendation' element={<Recommendation/>} />
-          
+          <Route path='/landingpage' element={<LandingPage/>} />
+          <Route path='/logout' element={<LandingPage/>} />
         </Routes>
-        {!userId && <Button onClick={() => { window.location.pathname = '/sign-in'; }}>Sign In</Button>}
-        {!userId && <Button onClick={() => { window.location.pathname = '/sign-up'; }}>Sign Up</Button>}
-
+       
       </>
     </BrowserRouter>
   );

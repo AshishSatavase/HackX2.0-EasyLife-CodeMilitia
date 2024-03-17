@@ -29,7 +29,7 @@ export default function ChatGpt() {
             let resultData = await result.text();
 
             console.warn(resultData);
-            setTimeout(()=>{setAns(prompt1)},2000)
+            setTimeout(()=>{setAns(prompt1)},1000)
             
             console.warn(ans);
             }catch(error){
@@ -49,11 +49,11 @@ export default function ChatGpt() {
     <main className="min-h-screen flex flex-col items-center justify-center ml-40">
       <Card className="w-full max-w-3xl rounded-xl border">
         <CardHeader className="p-6 rounded-t-xl border-b">
-          <div className="text-bold">Easy AI</div>
-          <div className="mt-2 text-sm">Send a message or upload a file</div>
+          <div className="text-bold text-6xl font-bold font-sans tracking-tight text-gray-900">Easy AI</div>
+          <div className="mt-20">Send a message or upload a file</div>
         </CardHeader>
         <CardContent className="  flex-col p-6 grid gap-4">
-        <div className="flex text-left text-lg font-sans leading-relaxed">{loading ? "Loading..." : ans}</div>
+        <div className="flex text-left text-lg font-serif leading-relaxed">{loading ? "Loading..." : ans}</div>
           <div className="grid gap-2">
             <label
               className="flex items-center px-4 py-2 rounded-lg border border-dashed cursor-pointer bg-gray-50 dark:bg-gray-900"

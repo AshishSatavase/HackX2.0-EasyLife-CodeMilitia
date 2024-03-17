@@ -7,7 +7,7 @@ npx v0 add 9H97aFeNf7U
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
+import { Link  } from "react-router-dom"
 
 export default function RecommmendationCard1() {
   return (
@@ -22,7 +22,7 @@ export default function RecommmendationCard1() {
             <Badge variant="secondary">No Room Rent Limit</Badge>
             <Badge>₹10.5 lakh Renewal Bonus</Badge>
             <Badge>Unlimited Restoration of cover</Badge>
-            <Link className="block text-right text-blue-600" href="#">
+            <Link to="#" className="block text-right text-blue-600" >
               View all features ›
             </Link>
             <div className="grid grid-cols-3 gap-4">
@@ -44,7 +44,7 @@ export default function RecommmendationCard1() {
             <Badge variant="secondary">No Room Rent Limit</Badge>
             <Badge>₹5 lakh No Claim Bonus</Badge>
             <Badge>Unlimited Restoration of Cover,Forever</Badge>
-            <Link className="block text-right text-blue-600" href="#">
+            <Link to="#" className="block text-right text-blue-600">
               View all features ›
             </Link>
             <div className="grid grid-cols-3 gap-4">
@@ -66,7 +66,7 @@ export default function RecommmendationCard1() {
             <Badge variant="secondary">Single pvt AC Room</Badge>
             <Badge>₹2.5 lakh No Claim Bonus</Badge>
             <Badge>Restoration of cover once a year</Badge>
-            <Link className="block text-right text-blue-600" href="#">
+            <Link to="#" className="block text-right text-blue-600" >
               View all features ›
             </Link>
             <div className="grid grid-cols-3 gap-4">
@@ -88,7 +88,7 @@ export default function RecommmendationCard1() {
             <Badge variant="secondary">No Room Rent Limit</Badge>
             <Badge>₹7 lakh Renewal Bonus; optional</Badge>
             <Badge>Unlimited Restoration of cover</Badge>
-            <Link className="block text-right text-blue-600" href="#">
+            <Link to="#" className="block text-right text-blue-600" >
               View all features ›
             </Link>
             <div className="grid grid-cols-3 gap-4">
