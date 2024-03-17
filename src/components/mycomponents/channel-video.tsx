@@ -1,6 +1,7 @@
 import { UserButton } from "@clerk/clerk-react";
 import { Button } from "../ui/button";
 import SideBar from "./sidebar";
+import VideoCallComp from "./video-call-component";
 
 export const ChannelVideo=()=>{
     return(
@@ -33,8 +34,9 @@ export const ChannelVideo=()=>{
       </div>
     </div>
             </div>
-            <div>
-            
+            <div className="flex justify-center items-center">
+                {/* //place */}
+                <VideoCallComp/>
             </div>
            </div>
         </div>

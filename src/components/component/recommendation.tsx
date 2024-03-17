@@ -4,7 +4,7 @@
  */
 import { Button } from "@/components/ui/button"
 
-export function Component() {
+export function recommendation() {
   return (
     <div className="bg-[#f4f8ff] p-6 rounded-lg shadow-md flex justify-between items-center">
       <div className="flex flex-col">

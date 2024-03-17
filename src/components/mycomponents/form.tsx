@@ -6,13 +6,17 @@
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
+import { toast ,ToastContainer} from "react-toastify";
 
 export default function Form() {
   const [name,setName]=useState('');
 
   return (
-    <div className="w-100 mx-auto p-6 bg-white rounded-lg shadow-md border-b">
-      <form>
+    <>
+
+    <ToastContainer/>
+       <div className="w-100 mx-auto p-6 bg-white rounded-lg shadow-md border-b">
+      <form onSubmit={(e)=>{e.preventDefault()}}>
         <fieldset>
           <legend className="text-lg font-semibold mb-4">Personal Information</legend>
           <div className="flex flex-col space-y-4 mb-6">
@@ -288,9 +292,11 @@ export default function Form() {
             </div>
           </div>
         </fieldset>
-        <Button className="w-full">Submit</Button>
+        <Button className="w-full" onClick={(e)=>{toast.success("Self declaration Complete")}}>Submit</Button>
       </form>
     </div>
+    </>
+   
   )
 }
 
