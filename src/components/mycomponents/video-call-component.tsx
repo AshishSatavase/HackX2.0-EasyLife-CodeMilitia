@@ -7,7 +7,7 @@ export const fetchCache = "force-no-store";
 
 export default function VideoCallComp() {
     const { roomId } = useParams();
-
+    
     const myMeeting = async (element: HTMLElement) => {
         const appID = 926094129;
         const serverSecret = "7f3bf25f4d45d1b636719ad7b8107c83";
@@ -28,7 +28,7 @@ export default function VideoCallComp() {
             sharedLinks: [
                 {
                     name:'copy url',
-                    url: `https://localhost:5173/channelvideo/328`,
+                    url: `http://localhost:5173/channelvideo`,
                 }
             ],
             
