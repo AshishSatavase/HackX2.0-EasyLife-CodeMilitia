@@ -12,7 +12,7 @@ export const ChannelVideo=()=>{
            </div >
             </div>
             
-           <div>
+           <div className="">
             <div>
             <div className="border-b bg-blue-400 bg-opacity-15 mb-5 ml-40">
       <div className="flex h-16 items-center px-4">
@@ -34,9 +34,14 @@ export const ChannelVideo=()=>{
       </div>
     </div>
             </div>
-            <div className="flex justify-center items-center">
-                {/* //place */}
-                <VideoCallComp/>
+            <div className=" flex-col justify-center ml-60 items-center h-[100vh] ">
+                {/* //place */}<div className="mt-20">
+                <h6 className=" font-bold font-serif text-3xl ">Connect with our Professionals</h6>
+                </div>
+<div className="flex justify-center ">
+<VideoCallComp/>
+
+</div>
             </div>
            </div>
         </div>

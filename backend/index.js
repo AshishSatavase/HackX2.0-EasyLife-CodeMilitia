@@ -15,7 +15,7 @@ const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
 const generationConfig = {
     stopSequences: ["red"],
-    maxOutputTokens: 10000,
+    maxOutputTokens: 50000,
     temperature: 0.9,
     topP: 0.1,
     topK: 16,

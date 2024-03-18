@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button"
 
 export default function ContactUs() {
   return (
-    <div className="bg-white">
+    <div className="bg-white ">
       <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="bg-gradient-to-r from-blue-300 via-blue-200 to-blue-100 p-8 rounded-lg shadow-lg">
           <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl">
@@ -20,8 +20,8 @@ export default function ContactUs() {
             like to contact below.
           </p>
           <div className="mt-8 md:grid md:grid-cols-2 md:gap-8">
-            <div className="mt-8 md:mt-0">
-              <form action="#" method="POST">
+            <div className="mt-8 md:mt-0 flex justify-self-center">
+              <form onSubmit={(e)=>{e.preventDefault()}}>
                 <div className="grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                   <div>
                     <label className="sr-only" htmlFor="first-name">

@@ -9,14 +9,19 @@ import { Input } from "@/components/ui/input"
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Button } from "../ui/button";
+import { Flower, FlowerIcon } from "lucide-react";
 
 export default function ChatGpt() {
+  
+
     const prompt1=" Pros: \nFinancial protection for dependents: Life insurance provides a financial safety net for your loved ones in case of your untimely death. It can help replace lost income, pay off debts, cover living expenses, and fund future financial goals.\nPeace of mind: Knowing that your family will be financially secure even if you're no longer around can provide peace of mind.\nTax benefits: In many cases, the death benefit received by beneficiaries is not subject to federal income tax. \nFlexible options: Life insurance policies come in various types (e.g., term life, whole life, universal life) and can be customized to suit your specific needs and budget. \nCash value accumulation: Permanent life insurance policies (such as whole life and universal life) often have a cash value component that accumulates over time and can be accessed during your lifetime through withdrawals or loans.\nCons:\nCost: Depending on factors such as age, health, coverage amount, and type of policy, life insurance premiums can be expensive, especially for older individuals or those with pre-existing health conditions.\nComplexity: Understanding the different types of life insurance policies, their features, and how they work can be complex and overwhelming. \nPotential for policy lapse: If you fail to pay premiums on time, your life insurance policy may lapse, causing you to lose coverage and any accumulated cash value. \nLimited investment growth: While permanent life insurance policies offer a cash value component, the growth rate may be lower compared to other investment options. Additionally, fees and expenses associated with these policies can eat into the cash value. \nWaiting period for benefits: In some cases, there may be a waiting period (known as the contestability period) before the full death benefit is paid out, particularly for deaths due to suicide or other specific causes."
     const[prompt,setPrompt]=useState('');
     const[ans,setAns]=useState('');
+    const [displayText,setDisplayText]=useState('');
     const [loading, setLoading] = useState(false);
     const generate=async()=>{
             try{
+              setPrompt("(ans without any **)"+prompt)
                 setLoading(true); 
             console.log(prompt)
             let result= await fetch('http://localhost:3000/gem',{
@@ -27,10 +32,8 @@ export default function ChatGpt() {
                 },
             });
             let resultData = await result.text();
-
-            console.warn(resultData);
-            setTimeout(()=>{setAns(prompt1)},1000)
-            
+            console.warn(resultData);   
+            setAns(resultData); 
             console.warn(ans);
             }catch(error){
                 toast.error("Something went wrong")
@@ -39,21 +42,27 @@ export default function ChatGpt() {
             }
         
     }
-    useEffect(() => {
-        console.log("Ans:", ans);
-    }, [ans]);
     
-
+    useEffect(() => {
+      const timer = setInterval(() => {
+        if (ans.length > displayText.length) {
+          setDisplayText(ans.substring(0, displayText.length + 1));
+        } else {
+          clearInterval(timer);
+        }
+      }, 8); // Adjust the interval as needed
+      return () => clearInterval(timer);
+    }, [displayText, ans]);
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center ml-40">
       <Card className="w-full max-w-3xl rounded-xl border">
         <CardHeader className="p-6 rounded-t-xl border-b">
-          <div className="text-bold text-6xl font-bold font-sans tracking-tight text-gray-900">Easy AI</div>
+           <div className="text-bold text-6xl font-bold font-sans tracking-tight text-gray-900">Easy AI</div>
           <div className="mt-20">Send a message or upload a file</div>
         </CardHeader>
         <CardContent className="  flex-col p-6 grid gap-4">
-        <div className="flex text-left text-lg font-serif leading-relaxed">{loading ? "Loading..." : ans}</div>
+        <div className="flex text-left text-lg font-serif leading-relaxed">{loading?<h1>Generating...</h1> :displayText}</div>
           <div className="grid gap-2">
             <label
               className="flex items-center px-4 py-2 rounded-lg border border-dashed cursor-pointer bg-gray-50 dark:bg-gray-900"

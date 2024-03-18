@@ -9,32 +9,35 @@ export default function VideoCallComp() {
     const { roomId } = useParams();
 
     const myMeeting = async (element: HTMLElement) => {
-        const appID = 489322233;
-        const serverSecret = "df7711107f965eeec247cad615e730a0";
+        const appID = 926094129;
+        const serverSecret = "7f3bf25f4d45d1b636719ad7b8107c83";
         const kitToken = ZegoUIKitPrebuilt.generateKitTokenForTest(
             appID,
             serverSecret,
             "328",
             Date.now().toString(),
-            "Anonymous"
+            "Name"
         );
         const zc = ZegoUIKitPrebuilt.create(kitToken);
         zc.joinRoom({
             container: element,
-            sharedLinks: [
-                {
-                    
-                    url: `http://localhost:5173/channelvideo`,
-                }
-            ],
             scenario: {
                 mode: ZegoUIKitPrebuilt.OneONoneCall
             },
             showScreenSharingButton: true,
+            sharedLinks: [
+                {
+                    name:'copy url',
+                    url: `https://localhost:5173/channelvideo/328`,
+                }
+            ],
+            
+            
+            
         });
-        const joinButton = document.querySelector('.zg-btn-primary') as HTMLElement;
+        const joinButton = document.querySelector('.zg-btn-secondary') as HTMLElement;
         if (joinButton) {
-            joinButton.style.backgroundColor = 'blue'; // Change button color
+            joinButton.style.backgroundColor = 'slate'; // Change button color
             joinButton.style.color = 'red'; // Change button text color
         }
     };
