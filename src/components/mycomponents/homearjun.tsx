@@ -1,9 +1,4 @@
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/KgVxK5J7EHS
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
-npx v0 add KgVxK5J7EHS
- */
+
 import { Button } from "@/components/ui/button"
 
 export default function Component() {

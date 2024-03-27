@@ -1,9 +1,4 @@
-/**
-npx v0 add 9H97aFeNf7U
- * v0 by Vercel.
- * @see https://v0.dev/t/9H97aFeNf7U
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 import { CardTitle, CardDescription, CardHeader, CardContent, CardFooter, Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"

@@ -1,14 +1,4 @@
-/**
-npx v0 add q7UsN8OCkbY
- * v0 by Vercel.
- * @see https://v0.dev/t/q7UsN8OCkbY
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/q7UsN8OCkbY
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 import { Button } from "@/components/ui/button"
 
 export default function HomeSide() {

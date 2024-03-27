@@ -1,9 +1,4 @@
-/**
 
- * v0 by Vercel.
- * @see https://v0.dev/t/ZdF9zhV6Zlz
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
 import { CardHeader, CardContent, Card } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { useEffect, useState } from "react";

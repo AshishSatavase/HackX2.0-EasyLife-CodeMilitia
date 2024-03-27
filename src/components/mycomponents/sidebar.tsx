@@ -1,10 +1,6 @@
 import { Braces,  GemIcon, LogOut, Phone, RollerCoasterIcon, ShieldCheck, Smile, SmilePlus } from "lucide-react";
 import { useParams } from "react-router-dom";
-/**
- * v0 by Vercel.
- * @see https://v0.dev/t/znNKwmixxlo
- * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
- */
+
 export default function SideBar() {
   const {paramName}=useParams();
   return (
